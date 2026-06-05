@@ -1,0 +1,19 @@
+{
+  "name": "letter-rush-game",
+  "version": "1.0.0",
+  "description": "Multiplayer letter category game with game master judging",
+  "scripts": {
+    "start": "vite --host 0.0.0.0",
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "firebase": "latest"
+  },
+  "devDependencies": {}
+}
