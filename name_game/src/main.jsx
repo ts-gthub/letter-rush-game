@@ -4,7 +4,7 @@ import { ref, set, update, onValue, get, remove } from 'firebase/database';
 import { db } from './firebase';
 import './style.css';
 
-const CATEGORIES = ['Name', 'Animal', 'Capital', 'Fruit / Vegetable', 'Celebrity', 'Country', 'Brand', 'Thing'];
+const CATEGORIES = ['Name', 'Animal', 'Capital', 'Fruit or Vegetable', 'Celebrity', 'Country', 'Brand', 'Thing'];
 const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').filter(l => !['Q','X','Z'].includes(l));
 const ROUND_SECONDS = 60;
 const TOTAL_ROUNDS = 10;
