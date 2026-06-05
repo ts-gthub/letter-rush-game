@@ -70,6 +70,16 @@ function App() {
   const isFinished = game?.status === 'finished';
   const allFilled = categories.every(cat => (answers[cat] || '').trim());
 
+useEffect(() => {
+  if (game?.status === 'playing') {
+    const blankAnswers = {};
+    categories.forEach(cat => {
+      blankAnswers[cat] = '';
+    });
+    setAnswers(blankAnswers);
+  }
+}, [currentRound]);
+
   async function createRoom() {
     const cleanName = name.trim();
     if (!cleanName) return alert('Enter your name first.');
