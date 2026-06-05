@@ -205,6 +205,15 @@ function App() {
     }
   }, [secondsLeft, game?.status, isMaster, gameMode]);
 
+  // Important: when one player clicks Done, the room immediately changes to judging.
+  // Every other player must still save whatever is currently typed on their screen.
+  // This effect runs on each player's device after the Done click / end round update.
+  useEffect(() => {
+    if (game?.status === 'judging' && round?.endedAt && !hasSubmitted) {
+      submitAnswers(false);
+    }
+  }, [game?.status, round?.endedAt, hasSubmitted]);
+
   async function judgeAnswer(pid, category, value, accepted) {
     if (!isMaster) return;
     const isDonePlayer = round.doneBy === pid;
